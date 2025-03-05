@@ -14,6 +14,16 @@
   }
 }
 
+body.light {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+body.dark {
+  background-color: #f0f0f0;
+  color: #1f610d;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

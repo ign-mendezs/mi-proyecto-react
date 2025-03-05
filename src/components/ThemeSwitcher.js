@@ -1,20 +1,46 @@
-import React from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+// components/ThemeSwitcher.js
+import React, { useState, useEffect } from 'react';
 
-function ThemeSwitcher() {
-  const { theme, toggleTheme } = useTheme();
+const ThemeSwitcher = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const buttonBgColor = theme === 'light' ? 'bg-gray-200' : 'bg-gray-700';
-  const buttonTextColor = theme === 'light' ? 'text-black' : 'text-white';
+  useEffect(() => {
+    // Actualiza el estado del body para mantener la consistencia (opcional)
+    document.body.classList.toggle('dark', isDarkMode);
+    document.body.classList.toggle('light', !isDarkMode);
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
-    <button
-      className={`p-2 rounded ${buttonBgColor} ${buttonTextColor}`}
-      onClick={toggleTheme}
-    >
-      Cambiar a color {theme === 'light' ? 'oscuro' : 'claro'}
-    </button>
+    <div>
+      <button 
+        className={`btn ${isDarkMode ? 'dark-card' : 'light-card'}`}
+        onClick={toggleTheme}
+      >
+        Cambiar a {isDarkMode ? 'Claro' : 'Oscuro'}
+      </button>
+      <style jsx>{`
+        .dark-card {
+          background-color: #333;
+          color: #fff;
+        }
+        .light-card {
+          background-color: #fff;
+          color: #000;
+        }
+      `}</style>
+      <style jsx global>{`
+        .card {
+          background-color: ${isDarkMode ? '#333' : '#fff'};
+          color: ${isDarkMode ? '#fff' : '#000'};
+          transition: background-color 0.3s ease;
+        }
+      `}</style>
+    </div>
   );
-}
+};
 
 export default ThemeSwitcher;
