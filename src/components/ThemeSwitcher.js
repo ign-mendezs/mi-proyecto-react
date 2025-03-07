@@ -5,7 +5,6 @@ const ThemeSwitcher = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Actualiza el estado del body para mantener la consistencia (opcional)
     document.body.classList.toggle('dark', isDarkMode);
     document.body.classList.toggle('light', !isDarkMode);
   }, [isDarkMode]);
@@ -26,10 +25,21 @@ const ThemeSwitcher = () => {
         .dark-card {
           background-color: #333;
           color: #fff;
+          margin: 5px; /* Agregamos un margen de 5px */
+          padding: 8px 16px; /* Añadimos padding para mejor aspecto */
+          border: none; /* Quitamos el borde por defecto */
+          cursor: pointer; /* Cambiamos el cursor al pasar por encima */
         }
         .light-card {
           background-color: #fff;
           color: #000;
+          margin: 5px; /* Agregamos un margen de 5px */
+          padding: 8px 16px; /* Añadimos padding para mejor aspecto */
+          border: 1px solid #ccc; /* Añadimos un borde ligero */
+          cursor: pointer; /* Cambiamos el cursor al pasar por encima */
+        }
+        button {
+          border-radius: 4px; /* Opcional: bordes redondeados */
         }
       `}</style>
       <style jsx global>{`
