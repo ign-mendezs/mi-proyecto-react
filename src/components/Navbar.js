@@ -24,6 +24,16 @@ export default function Navbar() {
                         🔄 Prueba para redirigir
                         </Link>
                     </li>
+                    <li>
+                        <Link href="/login" className="hover:bg-green-800 px-4 py-2 rounded transition">
+                        Login
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/logout" className="hover:bg-green-800 px-4 py-2 rounded transition">
+                        Logout
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
