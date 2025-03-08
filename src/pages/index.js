@@ -21,7 +21,7 @@ function HomePage() {
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
           <h1 className="text-3xl font-bold mb-6 text-center">Ejemplos de Fundamentos de React</h1>
 
-          <div className="grid grid-cols-2 gap-6 w-full max-w-4xl">
+          <div className="grid grid-cols-2 gap-3 w-full max-w-4xl">
             {/* Card 1: JSX y Renderizado */}
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">

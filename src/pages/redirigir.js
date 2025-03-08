@@ -23,7 +23,7 @@ export default function Home() {
     return (
         <div className="flex justify-center items-center h-screen">
             <div className="border border-gray-300 p-8 rounded-lg text-center">
-            <p>Serás redirigido en {countdown} segundos...</p>
+                <p>Serás redirigido en {countdown} segundos...</p>
             </div>
         </div>
     );
