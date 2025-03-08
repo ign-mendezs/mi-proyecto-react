@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <nav className="bg-customGreen text-white p-4">
+        <nav className="bg-primary text-textSecondary p-4">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <h1 className="text-xl font-bold">Mi Proyecto</h1>

@@ -10,7 +10,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customGreen: '#2E8B57',
+        customGreen: '#2c6e49',
+        primary: "#2c6e49", // Color del navbar
+        secondary: "#d68c45", // Color de botones
+        accent: "#4c956c", // Otro color de botones
+        background: "#fcefef", // Fondo de la página
+        textPrimary: "#283618", // Color de texto con fondo de la página
+        textSecondary: "#fcefef" // Color de texto con fondo navbar
       },
     },
   },

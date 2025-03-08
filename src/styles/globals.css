@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FEFEE3;
+  --foreground: #283618;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,12 +15,12 @@
 }
 
 body.light {
-  background-color: #f0f0f0;
-  color: #000;
+  background-color: #FEFEE3;
+  color: #283618;
 }
 
 body.dark {
-  background-color: #f0f0f0;
+  background-color: #FEFEE3;
   color: #1f610d;
 }
 
@@ -39,9 +39,9 @@ body {
 }
 
 .btn-blue {
-  @apply bg-blue-500 hover:bg-blue-700;
+  @apply bg-secondary hover:bg-accent;
 }
 
 .btn-green {
-  @apply bg-green-500 hover:bg-green-700;
+  @apply bg-accent hover:bg-secondary;
 }
