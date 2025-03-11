@@ -2,7 +2,7 @@ import React, { useState, Profiler } from 'react';
 import MiComponente from '../components/MiComponente';
 import Condicional from "../components/Condicional";
 import ThemeSwitcher from '../components/ThemeSwitcher';
-import { ThemeProvider } from '../contexts/ThemeContext';
+import { ThemeProvider } from '../context/ThemeContext';
 
 function HomePage() {
   const nombre = 'Usuario';
