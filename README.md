@@ -1,41 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Proyecto MVP Frontend - React/Next.js
 
-## Getting Started
+Este proyecto es un MVP (Producto Mínimo Viable) diseñado para explorar y demostrar la implementación de diversas herramientas y tecnologías en un entorno React/Next.js. El objetivo principal es poner en práctica conceptos como la autenticación JWT, el manejo de formularios con React Hook Form, la comunicación con un backend Node.js mediante Axios y el estilizado con Tailwind CSS.
 
-First, run the development server:
+## Tecnologías Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **React (19.0.0)**
+* **Next.js (15.1.6)**
+* **Tailwind CSS**
+* **Axios**
+* **React Hook Form**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura del Proyecto
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+mi-proyecto-react/
+├── components/
+│   ├── LoginForm.js           # Formulario de inicio de sesión
+│   ├── RegisterForm.js        # Formulario de registro
+│   └── ProtectedRoute.js      # Componente para proteger rutas
+├── pages/
+│   ├── index.js               # Página principal protegida
+│   └── login.js               # Página de inicio de sesión
+├── services/
+│   └── authService.js         # Servicio para la autenticación
+└── utils/
+└── api.js                 # Configuración de Axios
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Configuración
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+1.  Clona este repositorio.
+2.  Ejecuta `npm install` para instalar las dependencias.
+3.  Ejecuta `npm run dev` para iniciar el servidor de desarrollo.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Comunicación con el Backend
 
-## Learn More
+El frontend se comunica con el backend Node.js mediante peticiones HTTP utilizando Axios. El token JWT se almacena en `localStorage` y se incluye en la cabecera "Authorization" de las peticiones protegidas.
 
-To learn more about Next.js, take a look at the following resources:
+## Consideraciones
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+* Este es un MVP, por lo que algunas funcionalidades pueden ser básicas o estar simplificadas.
+* La gestión de errores y la validación de formularios pueden ser mejoradas en un entorno de producción.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Próximos Pasos
 
-## Deploy on Vercel
+* Implementación de pruebas unitarias y de integración.
+* Mejoras en la interfaz de usuario y la experiencia del usuario.
+* Integración con una base de datos real.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contacto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-"# mi-react" 
+[Tu Nombre/Usuario de GitHub] - [Tu Correo Electrónico]
