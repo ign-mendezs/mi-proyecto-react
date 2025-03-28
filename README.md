@@ -1,41 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Proyecto MVP Backend - Node.js con Express.js
 
-## Getting Started
+Este proyecto es el backend para el MVP de una aplicación React/Next.js. Su objetivo principal es proporcionar una API para la autenticación de usuarios mediante JWT y gestionar la comunicación con una base de datos MySQL.
 
-First, run the development server:
+## Tecnologías Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Node.js con Express.js (4.21.2)**
+* **SQLite **
+* **CORS (2.8.5)**
+* **Dotenv (16.4.7)**
+* **JSON Web Token (JWT) (9.0.2)**
+* **Bcrypt (5.1.1) y BcryptJS (2.4.3)**
+* **axios** → Cliente HTTP para hacer peticiones al backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura del Proyecto
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+mi-backend
+├── node_modules/
+├── routes/                    #/ Contiene las rutas de la API
+│   ├── auth.js                # Rutas de autenticación
+│   └── users.js               # Rutas para la gestión de usuarios
+├── models/                    #/ Define los modelos de la bd
+│   └── user.js                # Modelo de usuario para la base de datos
+├── config/                    
+│   └── db.js                  # Configuración de la base de datos
+├── .env                       # Variables de entorno
+├── package.json
+└── server.js                  # Punto de entrada de la aplicación
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Configuración
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+1.  Clona este repositorio.
+2.  Asegúrate de tener MySQL instalado y configurado.
+3.  Crea una base de datos y una tabla `users` con la estructura adecuada.
+4.  Crea un archivo `.env` en la raíz del proyecto con las variables de entorno necesarias (credenciales de la base de datos, clave secreta de JWT).
+5.  Ejecuta `npm install` para instalar las dependencias.
+6.  Ejecuta `node server.js` para iniciar el servidor.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Endpoints
 
-## Learn More
+* **POST /auth/login:** Inicia sesión y devuelve un JWT.
+* **POST /auth/register:** Registra un nuevo usuario.
 
-To learn more about Next.js, take a look at the following resources:
+## Autenticación JWT
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+La API utiliza JWT para la autenticación de usuarios. El token se genera al iniciar sesión y se debe incluir en la cabecera "Authorization" de las peticiones protegidas.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Consideraciones
 
-## Deploy on Vercel
+* Este es un MVP, por lo que algunas funcionalidades pueden ser básicas o estar simplificadas.
+* La seguridad es una prioridad, pero en un entorno de producción se requerirían medidas adicionales.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Próximos Pasos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-"# mi-react" 
+* Implementación de middleware para la autorización.
+* Documentación de la API con Swagger o Postman.
+* Implementación de pruebas unitarias y de integración.
+
+## Contacto
+
+[Ignacia Mendez] - [ contacto ]

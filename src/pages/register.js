@@ -1,31 +1,32 @@
 import { useForm } from "react-hook-form";
-import { loginUser } from "../services/authService";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { registerUser } from "@/services/authService";
 
-const Login = () => {
+import { useRouter } from "next/router";
+
+const Register = () => {
   const { register, handleSubmit } = useForm();
-  const { login } = useContext(AuthContext);
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     try {
-      const response = await loginUser(data);
-      login(response.token);
+      await registerUser(data);
+      router.push("/login");
     } catch (error) {
-      console.error("Error al iniciar sesión:", error);
+      console.error("Error al registrar:", error);
     }
   };
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 border rounded">
-      <h2 className="text-lg font-semibold">Iniciar Sesión</h2>
+      <h2 className="text-lg font-semibold">Registro</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <Input label="Nombre" type="text" register={register} name="name" required />
         <Input label="Email" type="email" register={register} name="email" required />
         <Input label="Contraseña" type="password" register={register} name="password" required />
-        <Button text="Ingresar" />
+        <Button text="Registrar" />
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
