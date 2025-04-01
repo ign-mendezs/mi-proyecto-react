@@ -1,21 +1,7 @@
 import React, { useEffect, useContext } from 'react';
-import { useRouter } from 'next/router';
-import { AuthContext } from '../context/AuthContext';
+import withAuthProtection from '../components/withAuthProtection';
 
 function Productos() {
-  const router = useRouter();
-  const { isAuthenticated } = useContext(AuthContext);
-
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push('/error'); // o redirigir a '/login'
-    }
-  }, [isAuthenticated, router]);
-
-  if (!isAuthenticated) {
-    return null; // Evita renderizar la página mientras se redirige
-  }
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
       <h1 className="text-2xl font-bold mb-6">Página de Productos</h1>
@@ -33,4 +19,4 @@ function Productos() {
   );
 }
 
-export default Productos;
+export default withAuthProtection(Productos, ['user', 'admin']);
