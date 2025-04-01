@@ -9,6 +9,15 @@ const ProtectedRoute = ({ children }) => {
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
+
+  // Si se especifica un permiso requerido y el usuario no lo tiene, redirige a una página de "No autorizado"
+  if (requiredPermission) {
+    // Se asume que el objeto 'user' tiene una propiedad 'permissions' (array)
+    if (!user || !user.permissions || !user.permissions.includes(requiredPermission)) {
+      return <Navigate to="/error" />;
+    }
+  }
+
   return children;
 };
 
