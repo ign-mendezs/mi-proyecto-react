@@ -28,6 +28,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
+            <Link href="/administrador" className="hover:bg-green-800 px-4 py-2 rounded transition">
+              🛠️ Administracion
+            </Link>
+          </li>
+          <li>
             <Link href="/login" className="hover:bg-green-800 px-4 py-2 rounded transition">
               Login
             </Link>
