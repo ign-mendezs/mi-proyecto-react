@@ -22,7 +22,7 @@ const Login = () => {
       const res = await api.post('/auth/login', formData);
       login(res.data.token);
       // Redirigir a la página luego del login
-      router.push('/index');
+      router.push('/');
     } catch (err) {
       setError(err.response?.data?.error || 'Error en el login');
     }

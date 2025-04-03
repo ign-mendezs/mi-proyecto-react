@@ -1,7 +1,7 @@
 import React, { useState, Profiler } from 'react';
 import Component from '../components/basics-examples/Component';
 import Condicional2 from "../components/basics-examples/Condicional2";
-import ThemeSwitcher from '../components/ThemeSwitcher';
+import ThemeSwitcher from '../components/basics-examples/ThemeSwitcher';
 import RedirectExample from '../components/basics-examples/RedirectExample';
 import { ThemeProvider } from '../context/ThemeContext';
 

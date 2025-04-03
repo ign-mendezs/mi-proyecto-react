@@ -10,7 +10,7 @@ function Productos() {
         <h2 className="text-lg font-semibold mb-2">Aquí pondría productos</h2>
       </div>
 
-      <img src="/turner.png" alt="turner" className="mb-6" />
+      <img src="/fondos/ghost_writer.png" alt="ghost" className="mb-6" />
 
       <div className="mb-6">
         <h2 className="text-lg font-semibold mb-2">Si tuviera alguno</h2>

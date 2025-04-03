@@ -1,8 +1,8 @@
 // src/components/Navbar.js
 import Link from 'next/link';
-import LogoutButton from './LogoutButton';
+import LogoutButton from './forms/LogoutButton';
 import { AuthContext } from '../context/AuthContext';
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 export default function Navbar() {
   const { isAuthenticated } = useContext(AuthContext);

@@ -1,8 +1,7 @@
 // src/components/LogoutButton.js
 import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
-import { AuthContext } from '../context/AuthContext';
-import Link from 'next/link';
+import { AuthContext } from '../../context/AuthContext';
 
 const LogoutButton = () => {
   const { logout, isAuthenticated } = useContext(AuthContext);
