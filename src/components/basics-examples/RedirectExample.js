@@ -1,5 +1,5 @@
 // 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 export default function RedirectExample() {
