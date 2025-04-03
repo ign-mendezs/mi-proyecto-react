@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        //background: "var(--background)",
         foreground: "var(--foreground)",
         customGreen: '#2c6e49',
         primary: "#2c6e49", // Color del navbar

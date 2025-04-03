@@ -12,21 +12,23 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // Memoriza el manejador de cambios para evitar recrearlo en cada render
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  }, []);
 
-  const handleSubmit = async (e) => {
+  // Memoriza el manejador de envío del formulario
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     try {
       const res = await api.post('/auth/login', formData);
       login(res.data.token);
-      // Redirigir a la página luego del login
       router.push('/');
     } catch (err) {
       setError(err.response?.data?.error || 'Error en el login');
     }
-  };
+  }, [formData, login, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
