@@ -21,17 +21,17 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/fundamentos-react" className="hover:bg-green-800 px-4 py-2 rounded transition">
+            <Link href="/basics-react" className="hover:bg-green-800 px-4 py-2 rounded transition">
               📚 Fundamentos de React
             </Link>
           </li>
           <li>
-            <Link href="/productos" className="hover:bg-green-800 px-4 py-2 rounded transition">
+            <Link href="/products" className="hover:bg-green-800 px-4 py-2 rounded transition">
               📦 Productos
             </Link>
           </li>
           <li>
-            <Link href="/administrador" className="hover:bg-green-800 px-4 py-2 rounded transition">
+            <Link href="/administrator" className="hover:bg-green-800 px-4 py-2 rounded transition">
               🛠️ Administracion
             </Link>
           </li>

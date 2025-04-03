@@ -18,22 +18,6 @@ Este proyecto es el frontend de *Mi Proyecto React*, una aplicación diseñada c
 - **Node.js** – entorno de ejecución del proyecto.
 - **Git** – para control de versiones.
 
-## Estructura del proyecto
-nombre-del-proyecto-frontend/
-├── public/
-│   ├── index.html
-│   └── ...
-├── src/
-│   ├── components/
-│   │   ├── ComponentExample.jsx
-│   │   └── ...
-│   ├── App.js
-│   ├── index.js
-│   └── styles/
-│       └── main.css
-├── package.json
-└── README.md
-
 ## 🗂️ Estructura del proyecto
 
 A continuación se muestra una vista simplificada de la estructura del frontend, con una breve descripción de cada carpeta:

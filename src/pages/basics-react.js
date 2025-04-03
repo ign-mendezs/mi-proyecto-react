@@ -1,8 +1,8 @@
 import React, { useState, Profiler } from 'react';
-import MiComponente from '../components/MiComponente';
-import Condicional from "../components/Condicional";
+import Component from '../components/basics-examples/Component';
+import Condicional2 from "../components/basics-examples/Condicional2";
 import ThemeSwitcher from '../components/ThemeSwitcher';
-import RedirectExample from '../components/RedirectExample';
+import RedirectExample from '../components/basics-examples/RedirectExample';
 import { ThemeProvider } from '../context/ThemeContext';
 
 function FundamentosReact() {
@@ -39,7 +39,7 @@ function FundamentosReact() {
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Props y Estado</h2>
-                <MiComponente texto={`Contador: ${contador}`} />
+                <Component texto={`Contador: ${contador}`} />
                 <button className="btn btn-blue" onClick={() => setContador(contador + 1)}>
                   Incrementar
                 </button>
@@ -70,7 +70,7 @@ function FundamentosReact() {
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Renderizado Condicional 2</h2>
-                <Condicional loggedIn={true} />
+                <Condicional2 loggedIn={true} />
               </div>
               <div className="card w-2/3 py-4">
                 <h2 className='font-bold'>Explicación</h2>
