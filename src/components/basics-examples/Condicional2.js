@@ -1,4 +1,4 @@
-const Condicional = ({ loggedIn }) => {
+const Condicional2 = ({ loggedIn }) => {
     return (
       <div>
         {loggedIn ? (
@@ -10,5 +10,5 @@ const Condicional = ({ loggedIn }) => {
     );
   };
   
-  export default Condicional;
+  export default Condicional2;
   

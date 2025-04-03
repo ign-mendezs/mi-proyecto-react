@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MiComponente(props) {
+function Component(props) {
   return (
     <div>
       <p>Este es un componente funcional. Props: {props.texto}</p>
@@ -8,4 +8,4 @@ function MiComponente(props) {
   );
 }
 
-export default MiComponente;
+export default Component;
