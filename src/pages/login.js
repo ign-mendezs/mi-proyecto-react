@@ -21,8 +21,8 @@ const Login = () => {
     try {
       const res = await api.post('/auth/login', formData);
       login(res.data.token);
-      // Redirigir a la página de productos luego del login
-      router.push('/productos');
+      // Redirigir a la página luego del login
+      router.push('/index');
     } catch (err) {
       setError(err.response?.data?.error || 'Error en el login');
     }
