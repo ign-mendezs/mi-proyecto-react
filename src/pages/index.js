@@ -6,7 +6,7 @@ function HomePage() {
       <div className="relative">
         
         {/* Decoración */}
-        <img src="fondos/animal_chara_fukurou_hakase.png"
+        <image src="fondos/animal_chara_fukurou_hakase.png"
           alt="Decoración" className="absolute -right-80 bottom-0 w-22 h-auto opacity-90 pointer-events-none"/>
           
           {/* Card */}

@@ -113,7 +113,7 @@ function FundamentosReact() {
 
           </div>
 
-          <img src="fondos/books.png"
+          <image src="fondos/books.png"
           alt="Decoración" className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
          
         </div>
