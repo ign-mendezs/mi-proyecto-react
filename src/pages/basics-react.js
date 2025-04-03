@@ -78,7 +78,7 @@ function FundamentosReact() {
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Renderizado Condicional 2</h2>
-                <Condicional2 loggedIn={true} />
+                <Condicional2 loggedIn />
               </div>
               <div className="card w-2/3 py-4">
                 <h2 className='font-bold'>Explicación</h2>
