@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { api } from '../services/api';
 import Link from 'next/link';
@@ -9,11 +9,12 @@ const Register = () => {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     try {
       await api.post('/auth/register', formData);
@@ -22,7 +23,7 @@ const Register = () => {
     } catch (err) {
       setError(err.response?.data?.error || 'Error al registrar usuario');
     }
-  };
+  }, [formData, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
