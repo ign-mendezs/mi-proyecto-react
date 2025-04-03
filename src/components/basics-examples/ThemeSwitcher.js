@@ -1,5 +1,7 @@
-// components/ThemeSwitcher.js
-import { useState, useEffect } from 'react';
+//
+import { useState, useEffect, useCallback } from 'react';
+
+/* eslint-disable react/no-unknown-property */
 
 const ThemeSwitcher = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -9,9 +11,9 @@ const ThemeSwitcher = () => {
     document.body.classList.toggle('light', !isDarkMode);
   }, [isDarkMode]);
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const toggleTheme = useCallback(() => {
+    setIsDarkMode(prev => !prev);
+  }, []);
 
   return (
     <div>

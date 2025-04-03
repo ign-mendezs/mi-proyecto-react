@@ -1,11 +1,15 @@
-// src/components/RedirectExample.js
-import { useState, useEffect } from 'react';
+// 
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 export default function RedirectExample() {
   const router = useRouter();
   const [countdown, setCountdown] = useState(5);
   const [isStarted, setIsStarted] = useState(false);
+
+  const handleStart = useCallback(() => {
+    setIsStarted(true);
+  }, []);
 
   useEffect(() => {
     if (!isStarted) return; // Solo inicia si isStarted es true
@@ -31,7 +35,7 @@ export default function RedirectExample() {
         <p>Serás redirigido en {countdown} segundos...</p>
       ) : (
         <button 
-          onClick={() => setIsStarted(true)} 
+          onClick={handleStart} 
           className="btn btn-blue"
         >
           Iniciar Redirección

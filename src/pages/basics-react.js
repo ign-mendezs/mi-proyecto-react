@@ -1,4 +1,4 @@
-import { useState, Profiler } from 'react';
+import { useState, Profiler, useCallback } from 'react';
 import Component from '../components/basics-examples/Component';
 import Condicional2 from "../components/basics-examples/Condicional2";
 import ThemeSwitcher from '../components/basics-examples/ThemeSwitcher';
@@ -15,6 +15,14 @@ function FundamentosReact() {
   const onRender = (id, phase, actualDuration) => {
     console.log(`Profiler: ${id} - ${phase} - actualDuration: ${actualDuration}`);
   };
+
+  const handleIncrement = useCallback(() => {
+    setContador(prev => prev + 1);
+  }, []);
+
+  const handleToggleMessage = useCallback(() => {
+    setMostrarMensaje(prev => !prev);
+  }, []);
 
   return (
     <ThemeProvider>
@@ -40,7 +48,7 @@ function FundamentosReact() {
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Props y Estado</h2>
                 <Component texto={`Contador: ${contador}`} />
-                <button className="btn btn-blue" onClick={() => setContador(contador + 1)}>
+                <button className="btn btn-blue" onClick={handleIncrement}>
                   Incrementar
                 </button>
               </div>
@@ -55,7 +63,7 @@ function FundamentosReact() {
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Renderizado Condicional</h2>
-                <button className="btn btn-green" onClick={() => setMostrarMensaje(!mostrarMensaje)}>
+                <button className="btn btn-green" onClick={handleToggleMessage}>
                   {mostrarMensaje ? 'Ocultar' : 'Mostrar'} Mensaje
                 </button>
                 {mostrarMensaje && <p className="mt-2">Este mensaje se muestra condicionalmente.</p>}
