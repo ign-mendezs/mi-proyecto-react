@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { api } from '../services/api';
 import Link from 'next/link';

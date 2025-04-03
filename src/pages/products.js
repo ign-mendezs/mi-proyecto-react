@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+
 import withAuthProtection from '../components/withAuthProtection';
 
 function Productos() {
