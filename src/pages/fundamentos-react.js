@@ -2,6 +2,7 @@ import React, { useState, Profiler } from 'react';
 import MiComponente from '../components/MiComponente';
 import Condicional from "../components/Condicional";
 import ThemeSwitcher from '../components/ThemeSwitcher';
+import RedirectExample from '../components/RedirectExample';
 import { ThemeProvider } from '../context/ThemeContext';
 
 function FundamentosReact() {
@@ -73,10 +74,10 @@ function FundamentosReact() {
               </div>
               <div className="card w-2/3 py-4">
                 <h2 className='font-bold'>Explicación</h2>
-                <p>Este componente funcional (Condicional) recibe una prop llamada loggedIn (un valor booleano). Utiliza renderizado condicional con un operador ternario para mostrar un mensaje de bienvenida o de inicio de sesión, dependiendo del valor de loggedIn.</p>
+                <p>Este componente funcional (Condicional) recibe una prop llamada loggedIn (un valor booleano). Utiliza renderizado condicional con un operador ternario para mostrar un mensaje de bienvenida o de inicio de sesión, dependiendo del valor de loggedIn que puedes cambiar con DevTools.</p>
               </div>
             </div>
-            {/* Card 5: cambio theme */}
+            {/* Card 5: cambio Colores*/}
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Cambio de tema</h2>
@@ -89,8 +90,24 @@ function FundamentosReact() {
                 <p> useEffect: Se utiliza para aplicar el tema al document.body cada vez que isDarkMode cambia. Esto se logra agregando o eliminando las clases dark y light del body. Esto permite que el estado del tema sea persistente en el body del documento. </p>
               </div>
             </div>
+
+            {/* Card 6: Ejemplo de Redirección */}
+            <div className="col-span-2 flex gap-x-6">
+              <RedirectExample />
+              <div className="card w-2/3 py-4">
+                <h2 className='font-bold'>Explicación</h2>
+                <p>
+                  Este ejemplo muestra cómo utilizar el hook useEffect para
+                  crear una cuenta regresiva que, al llegar a cero, redirige al usuario a otra página.
+                </p>
+              </div>
+            </div>
+
           </div>
 
+          <img src="fondos/books.png"
+          alt="Decoración" className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
+         
         </div>
       </Profiler>
     </ThemeProvider>
