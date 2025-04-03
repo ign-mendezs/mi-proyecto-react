@@ -1,4 +1,3 @@
-
 import { useState, useContext, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { api } from '../services/api';
