@@ -1,4 +1,4 @@
-import React from 'react';
+
 import withAuthProtection from '../components/withAuthProtection';
 
 function Productos() {

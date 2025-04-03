@@ -1,6 +1,6 @@
 // Para centralizar la protección de páginas se usa un HOC (Higher Order Component) Esto te permitiría envolver cualquier página y pasarle un permiso requerido
 
-import React, { useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../context/AuthContext';
 

@@ -1,5 +1,5 @@
 
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { api } from '../services/api';
 import { AuthContext } from '../context/AuthContext';

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import LogoutButton from './forms/LogoutButton';
 import { AuthContext } from '../context/AuthContext';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 export default function Navbar() {
   const { isAuthenticated } = useContext(AuthContext);
