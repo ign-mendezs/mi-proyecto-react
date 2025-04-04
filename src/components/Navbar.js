@@ -1,5 +1,5 @@
 // src/components/Navbar.js
-import Link from 'next/link';
+import NavItem from './NavItem';
 import LogoutButton from './forms/LogoutButton';
 import { AuthContext } from '../context/AuthContext';
 import { useContext } from 'react';
@@ -15,32 +15,12 @@ export default function Navbar() {
 
         {/* Links */}
         <ul className="flex items-center space-x-6">
-          <li>
-            <Link href="/" className="hover:bg-green-800 px-4 py-2 rounded transition">
-              👤 Inicio
-            </Link>
-          </li>
-          <li>
-            <Link href="/basics-react" className="hover:bg-green-800 px-4 py-2 rounded transition">
-              📚 Fundamentos de React
-            </Link>
-          </li>
-          <li>
-            <Link href="/products" className="hover:bg-green-800 px-4 py-2 rounded transition">
-              📦 Productos
-            </Link>
-          </li>
-          <li>
-            <Link href="/administrator" className="hover:bg-green-800 px-4 py-2 rounded transition">
-              🛠️ Administracion
-            </Link>
-          </li>
+          <NavItem href="/">👤 Inicio</NavItem>
+          <NavItem href="/basics-react">📚 Fundamentos de React</NavItem>
+          <NavItem href="/products">📦 Productos</NavItem>
+          <NavItem href="/administrator">🛠️ Administracion</NavItem>
           {!isAuthenticated && (
-            <li>
-              <Link href="/login" className="hover:bg-green-800 px-4 py-2 rounded transition">
-                Login
-              </Link>
-            </li>
+            <NavItem href="/login">🔑 Login</NavItem>
           )}
 
           {isAuthenticated && (
