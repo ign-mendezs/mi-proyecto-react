@@ -27,18 +27,18 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (token) => {
+  const login = (newToken) => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('token', token);
+      localStorage.setItem('token', newToken);
     }
-    setToken(token);
+    setToken(newToken);
     try {
-      const decodedUser = jwt_decode(token);
+      const decodedUser = jwt_decode(newToken);
       setUser(decodedUser);
     } catch (error) {
       console.error("Error decodificando el token:", error);
     }
-  };
+  };  
 
   const logout = () => {
     if (typeof window !== 'undefined') {
