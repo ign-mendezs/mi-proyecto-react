@@ -25,6 +25,14 @@ function FundamentosReact() {
     setMostrarMensaje(prev => !prev);
   }, []);
 
+  const handleIncrement = useCallback(() => {
+    setContador(prev => prev + 1);
+  }, []);
+
+  const handleToggleMessage = useCallback(() => {
+    setMostrarMensaje(prev => !prev);
+  }, []);
+
   return (
     <ThemeProvider>
       <Profiler id="HomePage" onRender={onRender}>
