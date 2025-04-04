@@ -6,7 +6,6 @@ import CondicionalCard from '../components/basics-examples/cards/CondicionalCard
 import Condicional2Card from '../components/basics-examples/cards/Condicional2Card';
 import ThemeCard from '../components/basics-examples/cards/ThemeCard';
 import RedirectCard from '../components/basics-examples/cards/RedirectCard';
-
 import { ThemeProvider } from '../context/ThemeContext';
 
 function FundamentosReact() {

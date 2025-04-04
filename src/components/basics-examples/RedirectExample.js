@@ -12,21 +12,25 @@ export default function RedirectExample() {
   }, []);
 
   useEffect(() => {
-    if (!isStarted) return; // Solo inicia si isStarted es true
-
+    if (!isStarted) return;
+  
     const interval = setInterval(() => {
       setCountdown((prevCountdown) => {
-        if (prevCountdown <= 1) {
+        const nextCountdown = prevCountdown - 1;
+  
+        if (nextCountdown <= 0) {
           clearInterval(interval);
-          router.replace('/'); // Redirige cuando llegue a 0
+          router.replace('/');
           return 0;
         }
-        return prevCountdown - 1;
+  
+        return nextCountdown;
       });
     }, 1000);
-
+  
     return () => clearInterval(interval);
   }, [isStarted, router]);
+  
 
   return (
     <div className="card flex flex-col items-center justify-center">
