@@ -12,9 +12,9 @@ function FundamentosReact() {
   const [contador, setContador] = useState(0);
   const [mostrarMensaje, setMostrarMensaje] = useState(false);
 
-  const onRender = (id, phase, actualDuration) => {
+  const onRender =useCallback( (id, phase, actualDuration) => {
     console.log(`Profiler: ${id} - ${phase} - actualDuration: ${actualDuration}`);
-  };
+  }, []);
 
   const handleIncrement = useCallback(() => {
     setContador(prev => prev + 1);
@@ -113,7 +113,7 @@ function FundamentosReact() {
 
           </div>
 
-          <image src="fondos/books.png"
+          <img src="fondos/books.png"
           alt="Decoración" className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
          
         </div>

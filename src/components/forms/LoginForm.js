@@ -6,6 +6,9 @@ function LoginForm({ setAuth }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const handleEmailChange = useCallback((e) => setEmail(e.target.value), []);
+  const handlePasswordChange = useCallback((e) => setPassword(e.target.value), []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,13 +30,13 @@ function LoginForm({ setAuth }) {
         type="email"
         placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleEmailChange}
       /><br />
       <input
         type="password"
         placeholder="Contraseña"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handlePasswordChange}
       /><br />
       <button type="submit">Iniciar sesión</button>
       {error && <p>{error}</p>}
