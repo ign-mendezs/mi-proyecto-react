@@ -1,4 +1,5 @@
 import { useState, Profiler, useCallback } from 'react';
+import Image from 'next/image'
 import Component from '../components/basics-examples/Component';
 import Condicional2 from "../components/basics-examples/Condicional2";
 import ThemeSwitcher from '../components/basics-examples/ThemeSwitcher';
@@ -12,9 +13,17 @@ function FundamentosReact() {
   const [contador, setContador] = useState(0);
   const [mostrarMensaje, setMostrarMensaje] = useState(false);
 
-  const onRender = (id, phase, actualDuration) => {
+  const onRender =useCallback( (id, phase, actualDuration) => {
     console.log(`Profiler: ${id} - ${phase} - actualDuration: ${actualDuration}`);
-  };
+  }, []);
+
+  const handleIncrement = useCallback(() => {
+    setContador(prev => prev + 1);
+  }, []);
+
+  const handleToggleMessage = useCallback(() => {
+    setMostrarMensaje(prev => !prev);
+  }, []);
 
   const handleIncrement = useCallback(() => {
     setContador(prev => prev + 1);
@@ -78,7 +87,7 @@ function FundamentosReact() {
             <div className="col-span-2 flex gap-x-6">
               <div className="card w-1/3 flex flex-col items-center justify-center">
                 <h2 className='font-bold'>Renderizado Condicional 2</h2>
-                <Condicional2 loggedIn={true} />
+                <Condicional2 loggedIn />
               </div>
               <div className="card w-2/3 py-4">
                 <h2 className='font-bold'>Explicación</h2>
@@ -113,8 +122,8 @@ function FundamentosReact() {
 
           </div>
 
-          <img src="fondos/books.png"
-          alt="Decoración" className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
+          <Image src="/fondos/books.png"
+          alt="Decoración" width={370} height={370} className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
          
         </div>
       </Profiler>

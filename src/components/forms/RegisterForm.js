@@ -8,6 +8,10 @@ function RegisterForm() {
   const [mensaje, setMensaje] = useState('');
   const [error, setError] = useState('');
 
+  const handleNameChange = useCallback((e) => setName(e.target.value), []);
+  const handleEmailChange = useCallback((e) => setEmail(e.target.value), []);
+  const handlePasswordChange = useCallback((e) => setPassword(e.target.value), []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,19 +31,19 @@ function RegisterForm() {
         type="text"
         placeholder="Nombre"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={handleNameChange}
       /><br />
       <input
         type="email"
         placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleEmailChange}
       /><br />
       <input
         type="password"
         placeholder="Contraseña"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handlePasswordChange}
       /><br />
       <button type="submit">Registrarse</button>
       {mensaje && <p>{mensaje}</p>}
