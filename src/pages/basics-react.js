@@ -1,4 +1,5 @@
 import { useState, Profiler, useCallback } from 'react';
+import Image from 'next/image'
 import Component from '../components/basics-examples/Component';
 import Condicional2 from "../components/basics-examples/Condicional2";
 import ThemeSwitcher from '../components/basics-examples/ThemeSwitcher';
@@ -113,8 +114,8 @@ function FundamentosReact() {
 
           </div>
 
-          <img src="fondos/books.png"
-          alt="Decoración" className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
+          <Image src="/fondos/books.png"
+          alt="Decoración" width={370} height={370} className="absolute -bottom-12.2 left-0 w-30 h-auto opacity-80 pointer-events-none"/>
          
         </div>
       </Profiler>

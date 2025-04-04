@@ -1,4 +1,4 @@
-
+import Image from 'next/image'
 import withAuthProtection from '../components/withAuthProtection';
 
 function Productos() {
@@ -10,7 +10,7 @@ function Productos() {
         <h2 className="text-lg font-semibold mb-2">Aquí pondría productos</h2>
       </div>
 
-      <img src="/fondos/ghost_writer.png" alt="ghost" className="mb-6" />
+      <Image src="/fondos/ghost_writer.png" alt="ghost" width={370} height={370} className="mb-6" />
 
       <div className="mb-6">
         <h2 className="text-lg font-semibold mb-2">Si tuviera alguno</h2>

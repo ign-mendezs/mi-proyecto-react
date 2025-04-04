@@ -1,3 +1,4 @@
+import Image from 'next/image'
 
 function HomePage() {
   return (
@@ -6,8 +7,8 @@ function HomePage() {
       <div className="relative">
         
         {/* Decoración */}
-        <img src="fondos/animal_chara_fukurou_hakase.png"
-          alt="Decoración" className="absolute -right-80 bottom-0 w-22 h-auto opacity-90 pointer-events-none"/>
+        <Image src="/fondos/animal_chara_fukurou_hakase.png"
+          alt="Decoración" width={370} height={370} className="absolute -right-80 bottom-0 w-22 h-auto opacity-90 pointer-events-none"/>
           
           {/* Card */}
           <div className="bg-white shadow-xl rounded-2xl p-8 max-w-xl text-center">
